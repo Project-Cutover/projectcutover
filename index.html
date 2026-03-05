@@ -1,565 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project Cutover</title>
-  <meta name="description" content="Independent leadership for SaaS platform migrations and production cutovers. Cutover planning, command center leadership, cross-team coordination, incident escalation." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Cutover</title>
 
-  <style>
-    :root{
-      --bg: #0b1020;
-      --surface: rgba(255,255,255,0.06);
-      --surface2: rgba(255,255,255,0.10);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.72);
-      --faint: rgba(255,255,255,0.55);
-      --stroke: rgba(255,255,255,0.14);
-      --shadow: 0 18px 60px rgba(0,0,0,0.55);
-      --glow: 0 0 0 1px rgba(255,255,255,0.10), 0 18px 60px rgba(0,0,0,0.55);
+<style>
 
-      --accent: #7c6cff;
-      --accent2:#00d0ff;
-      --ok:#39d98a;
-      --warn:#ffd166;
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+margin:0;
+background:#ffffff;
+color:#111;
+line-height:1.6;
+}
 
-      --radius: 18px;
-      --radius2: 22px;
-      --max: 1080px;
+.container{
+max-width:900px;
+margin:auto;
+padding:80px 20px;
+}
 
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    }
+h1{
+font-size:44px;
+margin-bottom:10px;
+}
 
-    *{ box-sizing: border-box; }
-    html, body{ height:100%; }
-    body{
-      margin:0;
-      font-family: var(--sans);
-      color: var(--text);
-      background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(124,108,255,0.25), transparent 60%),
-        radial-gradient(900px 600px at 90% 20%, rgba(0,208,255,0.18), transparent 55%),
-        radial-gradient(1000px 700px at 50% 100%, rgba(57,217,138,0.10), transparent 60%),
-        linear-gradient(180deg, #070a14 0%, #0b1020 55%, #070a14 100%);
-      overflow-x:hidden;
-    }
+.subtitle{
+font-size:20px;
+color:#555;
+margin-bottom:60px;
+}
 
-    a{ color: inherit; text-decoration: none; }
-    a:hover{ text-decoration: none; }
+.section{
+margin-bottom:50px;
+}
 
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 28px 18px 70px;
-    }
+h2{
+font-size:20px;
+margin-bottom:15px;
+letter-spacing:.02em;
+}
 
-    /* Top bar */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      position: sticky;
-      top: 0;
-      padding: 14px 0;
-      background: linear-gradient(180deg, rgba(11,16,32,0.96), rgba(11,16,32,0.55), rgba(11,16,32,0));
-      backdrop-filter: blur(10px);
-      z-index: 10;
-    }
+p{
+color:#333;
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 220px;
-    }
+ul{
+padding-left:18px;
+}
 
-    .mark{
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background:
-        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,0.35), transparent 55%),
-        linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-      box-shadow: 0 10px 28px rgba(124,108,255,0.20);
-      position: relative;
-      overflow:hidden;
-    }
-    .mark:after{
-      content:"";
-      position:absolute;
-      inset:-40%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), transparent 55%);
-      transform: rotate(15deg);
-      opacity: 0.8;
-    }
+li{
+margin-bottom:10px;
+}
 
-    .brand h1{
-      margin:0;
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 700;
-    }
-    .brand .sub{
-      margin: 2px 0 0;
-      font-size: 12px;
-      color: var(--faint);
-    }
+.divider{
+height:1px;
+background:#eee;
+margin:50px 0;
+}
 
-    .nav{
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      flex-wrap: wrap;
-      justify-content:flex-end;
-    }
+.cta{
+margin-top:40px;
+font-weight:500;
+}
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.04);
-      color: var(--muted);
-      font-size: 13px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      white-space: nowrap;
-    }
-    .pill:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.20);
-    }
+.email{
+font-size:18px;
+font-weight:600;
+}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 11px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: linear-gradient(135deg, rgba(124,108,255,0.90), rgba(0,208,255,0.80));
-      color: white;
-      font-weight: 700;
-      font-size: 13px;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.45);
-      transition: transform .12s ease, filter .12s ease;
-      white-space: nowrap;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      filter: brightness(1.05);
-    }
-
-    /* Hero */
-    .hero{
-      margin-top: 26px;
-      display:grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .card{
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.04);
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-
-    .heroMain{
-      padding: 28px 26px;
-      position: relative;
-      background:
-        radial-gradient(900px 500px at 10% 0%, rgba(124,108,255,0.20), transparent 60%),
-        radial-gradient(650px 450px at 95% 25%, rgba(0,208,255,0.16), transparent 55%),
-        rgba(255,255,255,0.04);
-    }
-
-    .kicker{
-      display:inline-flex;
-      gap: 10px;
-      align-items:center;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.05);
-      color: var(--muted);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      width: fit-content;
-    }
-
-    .dot{
-      width: 8px; height: 8px;
-      border-radius: 999px;
-      background: var(--ok);
-      box-shadow: 0 0 0 4px rgba(57,217,138,0.12);
-    }
-
-    .heroMain h2{
-      margin: 16px 0 10px;
-      font-size: clamp(30px, 3.2vw, 44px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-    }
-
-    .heroMain p{
-      margin: 0;
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 62ch;
-    }
-
-    .heroActions{
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .ghost{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 11px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.03);
-      color: var(--text);
-      font-weight: 700;
-      font-size: 13px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      white-space: nowrap;
-    }
-    .ghost:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.20);
-    }
-
-    .mini{
-      margin-top: 18px;
-      display:flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      color: var(--faint);
-      font-size: 12px;
-    }
-    .mini span{
-      display:inline-flex;
-      gap: 8px;
-      align-items:center;
-      padding: 8px 10px;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.03);
-    }
-    .mini b{ color: var(--muted); font-weight: 700; }
-
-    /* Side card */
-    .heroSide{
-      padding: 22px 20px;
-      display:flex;
-      flex-direction: column;
-      gap: 14px;
-      background: rgba(255,255,255,0.04);
-    }
-
-    .sideTitle{
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin: 2px 0 6px;
-      font-weight: 800;
-    }
-
-    .metric{
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 14px 14px;
-      background: rgba(255,255,255,0.03);
-    }
-    .metric .label{
-      color: var(--faint);
-      font-size: 12px;
-      margin-bottom: 6px;
-      font-family: var(--mono);
-    }
-    .metric .value{
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.35;
-      font-weight: 700;
-    }
-    .metric .value small{
-      display:block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-weight: 500;
-      font-size: 13px;
-      line-height: 1.45;
-      font-family: var(--sans);
-    }
-
-    .callout{
-      margin-top: auto;
-      border-radius: 16px;
-      padding: 14px 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background:
-        radial-gradient(300px 180px at 20% 20%, rgba(124,108,255,0.25), transparent 60%),
-        rgba(255,255,255,0.03);
-    }
-    .callout p{
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 13px;
-    }
-    .callout a{
-      font-weight: 800;
-      color: white;
-      text-decoration: underline;
-      text-decoration-color: rgba(255,255,255,0.35);
-      text-underline-offset: 3px;
-    }
-
-    /* Sections */
-    .grid{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 14px;
-    }
-
-    .panel{
-      padding: 18px 18px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.03);
-      box-shadow: var(--glow);
-      min-height: 150px;
-    }
-    .panel h3{
-      margin: 0 0 8px;
-      font-size: 14px;
-      color: var(--text);
-      letter-spacing: -0.01em;
-    }
-    .panel p{
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-    }
-
-    .list{
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    .section{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .footer{
-      margin-top: 18px;
-      padding: 18px;
-      border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.03);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      color: var(--faint);
-      font-size: 12px;
-    }
-
-    .footer .right{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items:center;
-    }
-
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.03);
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 12px;
-    }
-
-    /* Responsive */
-    @media (max-width: 920px){
-      .hero{ grid-template-columns: 1fr; }
-      .grid{ grid-template-columns: 1fr; }
-      .section{ grid-template-columns: 1fr; }
-      .brand{ min-width: unset; }
-      .topbar{ position: relative; background: none; backdrop-filter:none; }
-    }
-  </style>
+</style>
 </head>
 
 <body>
-  <div class="wrap">
 
-    <div class="topbar">
-      <div class="brand">
-        <div class="mark" aria-hidden="true"></div>
-        <div>
-          <h1>Project Cutover</h1>
-          <div class="sub">SaaS migrations • go-live leadership • risk & escalation</div>
-        </div>
-      </div>
+<div class="container">
 
-      <div class="nav">
-        <a class="pill" href="#services">Services</a>
-        <a class="pill" href="#approach">Approach</a>
-        <a class="pill" href="#contact">Contact</a>
-        <a class="btn" href="mailto:jona@projectcutover.com?subject=Project%20Cutover%20-%20Intro%20Call&body=Hi%20Jona%2C%0A%0AI%27d%20like%20to%20set%20up%20a%2015-minute%20intro%20call%20to%20discuss%20a%20migration%20or%20cutover.%0A%0ACompany%3A%0AProject%3A%0ATimeline%3A%0A%0AThanks%2C">
-          Request intro
-        </a>
-      </div>
-    </div>
+<h1>Project Cutover</h1>
 
-    <div class="hero">
-      <div class="card heroMain">
-        <div class="kicker"><span class="dot"></span> Available for cutover leadership (contract)</div>
+<div class="subtitle">
+Independent leadership for SaaS platform migrations and production cutovers.
+</div>
 
-        <h2>Independent leadership for SaaS platform migrations and production cutovers.</h2>
+<div class="section">
+<h2>What I Do</h2>
 
-        <p>
-          I help SaaS companies execute high-stakes go-lives by driving cutover planning, cross-team coordination,
-          risk management, and real-time incident escalation through launch.
-        </p>
+<p>
+I help SaaS companies execute complex migrations and high-stakes go-lives by leading cutover planning, cross-team coordination, risk management, and real-time issue escalation.
+</p>
+</div>
 
-        <div class="heroActions">
-          <a class="btn" href="mailto:jona@projectcutover.com?subject=Project%20Cutover%20-%20Cutover%20Support&body=Hi%20Jona%2C%0A%0AWe%27re%20planning%20a%20migration%20or%20cutover%20and%20could%20use%20support.%0A%0ACompany%3A%0AProject%3A%0ATimeline%3A%0AScope%3A%0A%0AThanks%2C">Email me</a>
-          <a class="ghost" href="#services">See services</a>
-          <a class="ghost" href="#approach">How I run go-lives</a>
-        </div>
+<div class="divider"></div>
 
-        <div class="mini" aria-label="credibility strip">
-          <span><b>Strength</b> Cutover windows</span>
-          <span><b>Strength</b> Cross-vendor coordination</span>
-          <span><b>Strength</b> Incident command</span>
-          <span><b>Outcome</b> Predictable launches</span>
-        </div>
-      </div>
+<div class="section">
+<h2>Services</h2>
 
-      <div class="card heroSide">
-        <div class="sideTitle">Engagement types</div>
+<ul>
+<li>Cutover planning and execution</li>
+<li>Go-live command center leadership</li>
+<li>Cross-team deployment coordination</li>
+<li>Incident and escalation management</li>
+<li>Platform migration oversight</li>
+</ul>
 
-        <div class="metric">
-          <div class="label">CUTOVER LEAD (CONTRACT)</div>
-          <div class="value">4–12 weeks
-            <small>Own the cutover plan, readiness cadence, launch command center, and post-go-live stabilization.</small>
-          </div>
-        </div>
+</div>
 
-        <div class="metric">
-          <div class="label">MIGRATION PROGRAM SUPPORT</div>
-          <div class="value">Part-time / Fractional
-            <small>Operational structure, tracking, vendor alignment, risk controls, and escalation routines.</small>
-          </div>
-        </div>
+<div class="divider"></div>
 
-        <div class="metric">
-          <div class="label">GO-LIVE RECOVERY</div>
-          <div class="value">1–3 weeks
-            <small>Re-establish ownership, triage workflow, and communication so the launch doesn’t stall.</small>
-          </div>
-        </div>
+<div class="section">
 
-        <div class="callout">
-          <p>
-            Prefer a quick start? Send a note with your timeline and I’ll reply with a simple engagement plan.
-            <a href="#contact">Contact below</a>.
-          </p>
-        </div>
-      </div>
-    </div>
+<h2>How I Run a Go-Live</h2>
 
-    <div id="services" class="grid">
-      <div class="panel">
-        <h3>Cutover planning & execution</h3>
-        <p>Run a structured cutover window plan with owners, sequencing, rollback paths, comms cadence, and readiness gates.</p>
-      </div>
+<ul>
+<li>Clear readiness gates and go / no-go decision criteria</li>
+<li>Structured cutover runbooks with sequencing and rollback plans</li>
+<li>Command center coordination across engineering, ops, and vendors</li>
+<li>Real-time issue triage and escalation management</li>
+<li>Post-launch stabilization and operational handoff</li>
+</ul>
 
-      <div class="panel">
-        <h3>Go-live command center leadership</h3>
-        <p>Lead real-time launch coordination: issue triage, escalation paths, business impact tracking, and stakeholder updates.</p>
-      </div>
+</div>
 
-      <div class="panel">
-        <h3>Cross-team and vendor alignment</h3>
-        <p>Coordinate engineering, ops, support, and third parties with a single source of truth for risks, actions, and decisions.</p>
-      </div>
-    </div>
+<div class="divider"></div>
 
-    <div id="approach" class="section">
-      <div class="panel">
-        <h3>How I run a go-live</h3>
-        <ul class="list">
-          <li>Readiness gates: clear “go / no-go” criteria and owners</li>
-          <li>Cutover runbook: sequencing, timing, and rollback paths</li>
-          <li>Command center: triage workflow and escalation protocol</li>
-          <li>Business impact: track what matters, not just tickets</li>
-          <li>Stabilization: handoff, retrospectives, and closure plan</li>
-        </ul>
-      </div>
+<div class="section">
 
-      <div class="panel">
-        <h3>What clients get</h3>
-        <ul class="list">
-          <li>Calm, structured execution during high pressure windows</li>
-          <li>Fewer launch surprises through disciplined readiness</li>
-          <li>Clear communication across teams and time zones</li>
-          <li>Decision clarity when tradeoffs are unavoidable</li>
-          <li>Operational closure after go-live (handoff + retro)</li>
-        </ul>
-      </div>
-    </div>
+<h2>Engagement</h2>
 
-    <div id="contact" class="footer">
-      <div>
-        <div style="font-weight:800; color: var(--text); margin-bottom:4px;">Contact</div>
-        <div style="color: var(--muted);">
-          <a href="mailto:jona@projectcutover.com?subject=Project%20Cutover%20-%20Inquiry">jona@projectcutover.com</a>
-        </div>
-      </div>
+<p>
+Typical engagements run between <strong>4–12 weeks</strong> depending on migration scope and deployment timeline.
+</p>
 
-      <div class="right">
-        <div class="chip">Timezone: PT (UTC-8)</div>
-        <div class="chip">Response: within 1 business day</div>
-      </div>
-    </div>
+</div>
 
-  </div>
+<div class="divider"></div>
+
+<div class="section">
+
+<h2>Contact</h2>
+
+<div class="email">
+jona@projectcutover.com
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
