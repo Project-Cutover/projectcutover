@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Project Cutover</title>
-<meta name="description" content="A two-week diagnostic that finds the cross-team promises standing between your pilot and production, and puts a person's name and a date on each one.">
+<title>Software implementations, run from the requirements to the handover.</title>
+<meta name="description" content="A new platform, a migration or an AI agent going into production, led by one person from start to finish and handed to the team that keeps it running.">
 
 <link rel="icon" href="logo-mark.png" type="image/png">
 <link rel="apple-touch-icon" href="logo-mark.png">
@@ -145,38 +145,6 @@ h1 .q{color:var(--brand)}
 .standfirst.last{margin-bottom:var(--s4)}
 .cta{display:flex;flex-wrap:wrap;gap:var(--s2)}
 
-/* ---------- the situation: the numeral is the focal point ---------- */
-
-.stats{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  max-width:40rem;
-  gap:var(--s4);
-  align-items:end;
-  margin:0 0 var(--s3);
-}
-.stat .fig{
-  display:block;
-  font-weight:800;
-  line-height:.84;
-  letter-spacing:-.045em;
-  font-variant-numeric:tabular-nums lining-nums;
-  font-feature-settings:"tnum" 1,"lnum" 1;
-  padding-bottom:var(--s2);
-  border-bottom:1px solid var(--line-2);
-}
-.stat .what{
-  display:block;font-size:15px;line-height:1.45;
-  color:var(--fg-3);padding-top:var(--s1);max-width:22rem;
-}
-.stat.context .fig{font-size:clamp(44px,5vw,64px);color:var(--fg-2)}
-.stat.point .fig{font-size:clamp(44px,5vw,64px);color:var(--brand);border-bottom-color:var(--brand)}
-.stat.point .what{color:var(--fg-2)}
-.source{
-  font-size:13px;color:var(--fg-3);
-  margin:0 0 var(--s4);font-weight:500;
-}
-
 /* ---------- who runs it: a recessed block, not a headline section ---------- */
 
 .who-block{
@@ -207,7 +175,6 @@ h1 .q{color:var(--brand)}
 
 .foot{border-top:1px solid var(--line);background:var(--surface)}
 .foot .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--s4);padding:var(--s5) 0 var(--s4)}
-.foot .offer{font-size:14px;color:var(--fg-3);margin:var(--s2) 0 0;max-width:24rem;line-height:1.55}
 .foot h4{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);margin:0 0 var(--s2)}
 .foot ul{list-style:none;margin:0;padding:0}
 .foot li{margin-bottom:var(--s1)}
@@ -228,7 +195,6 @@ h1 .q{color:var(--brand)}
   .hero{padding:var(--s6) 0 var(--s5)}
   .hero .inner{grid-template-columns:1fr;gap:var(--s4)}
   .heromark .mark{max-width:180px;margin-left:0}
-  .stats{grid-template-columns:1fr;gap:var(--s4);align-items:start}
   .nav{display:none}
   .foot .cols{grid-template-columns:1fr 1fr}
 }
@@ -257,8 +223,8 @@ h1 .q{color:var(--brand)}
     </a>
     <nav class="nav" aria-label="Sections">
       <a href="#situation">The situation</a>
-      <a href="#diagnostic">What the diagnostic does</a>
-      <a href="#how">How it runs</a>
+      <a href="#engagement">The engagement</a>
+      <a href="#how">How it starts</a>
       <a href="#contact">Get in touch</a>
     </nav>
     <a class="btn" href="mailto:jona@projectcutover.com">Get in touch</a>
@@ -270,8 +236,8 @@ h1 .q{color:var(--brand)}
 <section class="hero">
   <div class="wrap inner">
     <div>
-      <h1>Your agent works. <span class="q">The promises that get it live were never filed.</span></h1>
-      <p class="standfirst last">The work still standing between your pilot and production comes out of your own tickets, with a person's name and a date against each item, in a form your change process already accepts.</p>
+      <h1>Software implementations, <span class="q">run from the requirements to the handover.</span></h1>
+      <p class="standfirst last">A new platform, a migration or an AI agent going into production, led by one person from start to finish and handed to the team that keeps it running. If you've opened a req for the person who'd run it, the work can start while you hire.</p>
       <div class="cta">
         <a class="btn" href="mailto:jona@projectcutover.com">Get in touch</a>
       </div>
@@ -286,38 +252,26 @@ h1 .q{color:var(--brand)}
   <div class="wrap">
     <h2 id="h-situation">The situation</h2>
     <div class="prose">
-      <p>Getting one of yours live means a security review, somewhere for it to run, a decision about what it may write to, and legal looking at the data scope. Each of those is a promise one team made another. Your change process handles the ones somebody filed, where a change record carries a backout plan and a named approver and nothing ships without them. The ones that stall a go-live got made in a ticket comment or a thread, never went in as a change, and so never reached the gate that would have put a name on them.</p>
+      <p>A req for someone to own an implementation means the work has a budget and a name, and it's waiting for that person to start. Before anything goes live, someone has to write the requirements and get several teams to agree on who does what. Where there's a vendor to choose, that comes first.</p>
     </div>
-    <div class="stats">
-      <div class="stat context">
-        <span class="fig">79%</span>
-        <span class="what">of companies report AI agents in use.</span>
-      </div>
-      <div class="stat point">
-        <span class="fig">17%</span>
-        <span class="what">have them integrated into almost all workflows.</span>
-      </div>
-    </div>
-    <p class="source">(PwC AI Agent Survey, n=308 US senior executives, fielded 22&ndash;28 April 2025.)</p>
   </div>
 </section>
 
-<section class="s-diagnostic" id="diagnostic" aria-labelledby="h-diagnostic">
+<section class="s-diagnostic" id="engagement" aria-labelledby="h-engagement">
   <div class="wrap">
-    <h2 id="h-diagnostic">What the diagnostic does</h2>
+    <h2 id="h-engagement">The engagement</h2>
     <div class="prose">
-      <p>Every promise between the pilot and production comes out of your own tickets, each one carrying a person's name and a date. It counts how long each promise has been open from the day it was made, whatever the due date says now. The list separates what blocks the go-live from what can run late, and puts them in order.</p>
-      <p>Not everything that stops a go-live has a ticket. The diagnostic goes looking for what no ticket shows, including the rollback nobody has written and the approvals nobody has asked for yet, and answers what happens on the day the agent writes the wrong thing to a customer record.</p>
-      <p>What comes back is built to be filed. Each item arrives with an owner and a date against whatever it blocks, laid out the way your own change process already wants it, so it can go to whoever signs the go-live without you having to walk them through it.</p>
+      <p>Project Cutover leads the whole implementation: the requirements, the vendor choice where there is one, the build alongside your engineers, the cutover, and the handover. It runs as a fixed project or as a monthly retainer, and either way it ends on a named handover date. If you're hiring for the role, the handover is to the person you hire.</p>
+      <p>Agent rollouts are the specialism. They add a security review and a decision about what the agent is allowed to write to, and both have to happen before anyone will sign the go-live.</p>
     </div>
   </div>
 </section>
 
 <section class="s-how" id="how" aria-labelledby="h-how">
   <div class="wrap">
-    <h2 id="h-how">How it runs</h2>
+    <h2 id="h-how">How it starts</h2>
     <div class="prose">
-      <p>The diagnostic starts with whatever you can already share, before anything is proposed. Then what "in production" means here is agreed in writing, with acceptance criteria someone could test. The list is built from the real tickets, and the report comes back with named owners and a sequence. At the end you have the named risks and the choice of acting on them yourself or bringing Project Cutover back for the go-live itself.</p>
+      <p>Every engagement opens with a discovery at a fixed fee. It ends with a plan that puts an owner against every dependency, and a proposal for the build at a fixed price.</p>
     </div>
   </div>
 </section>
@@ -327,8 +281,7 @@ h1 .q{color:var(--brand)}
     <div class="who-block">
       <h2 id="h-who">Who runs it</h2>
       <div class="prose">
-        <p>Jona Venzor has spent about ten years on enterprise deployment and cutover work. The Amadeus cutover ran to roughly 3,200 interdependent deployment tasks planned across five months, on top of two and a half years of preparation, and the planning framework built for it was reused for the rollouts that came after.</p>
-        <p>None of that involved an agent. The part that carries over is a promise between two teams with a name and a date on it, settled before the go-live window opens rather than during it. That job is the same here.</p>
+        <p>Jona Venzor has spent about ten years running implementations and cutovers, and builds software with agents. At Alogent that meant 30 to 45 SaaS implementations at once. The Amadeus cutover ran to roughly 3,200 interdependent deployment tasks planned across five months, and the planning framework built for it was reused for the rollouts that came after.</p>
       </div>
     </div>
   </div>
@@ -338,7 +291,7 @@ h1 .q{color:var(--brand)}
   <div class="wrap">
     <h2 id="h-contact">Get in touch</h2>
     <a class="mail" href="mailto:jona@projectcutover.com">jona@projectcutover.com</a>
-    <p class="prose">Write if you want to talk about where your agent is stuck.</p>
+    <p class="prose">Write if there's an implementation you need run, or a req you're hiring for.</p>
   </div>
 </section>
 
@@ -352,14 +305,13 @@ h1 .q{color:var(--brand)}
           <span class="mark" aria-hidden="true"></span>
           <span class="nm">Project Cutover</span>
         </a>
-        <p class="offer">The Go-Live Ledger</p>
       </div>
       <div>
         <h4>Sections</h4>
         <ul>
           <li><a href="#situation">The situation</a></li>
-          <li><a href="#diagnostic">What the diagnostic does</a></li>
-          <li><a href="#how">How it runs</a></li>
+          <li><a href="#engagement">The engagement</a></li>
+          <li><a href="#how">How it starts</a></li>
           <li><a href="#contact">Get in touch</a></li>
         </ul>
       </div>
