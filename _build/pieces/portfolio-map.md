@@ -1,17 +1,17 @@
 <!-- style-gate: allow (sources quoted verbatim) -->
 ---
 slug: portfolio-map
-status: v1, approved by Jona 2026-10-22 with notes applied.
+status: v1, approved by Jona 2026-10-22 with notes applied; v1.1 for Wave 1, passed by Jona and published 2026-10-23: the workbook replaced by v4 under the same links, its template paragraph, preview and connections updated to match. The live text is in superseded/live-2026-10-22/.
 evidence: every figure and quote opened at source by the lead on 2026-10-22; rows in ~/cutover/evidence/portfolio-map.md
 published: 22 October 2026
 desc: What are we running, and who owns each one? How HMRC's war room cut its list in 2017, and how to build your own portfolio register, with a workbook to download.
-draws_on: Status report, Program charter and benefits
+draws_on: Status report, Program charter and benefits, Intake and scoring
 feeds_into: Intake and scoring, Capacity, Program meetings, Project charter
 template_name: Portfolio workbook
 cover: /delivery/portfolio-map/portfolio-map-cover-2.png
-template_shot: /delivery/portfolio-map/frqz-portfolio-register.png
+template_shot: /delivery/portfolio-map/frqz-portfolio-register-2.png
 template_text: Start with the Starter. Move to the Full when the steering group meets on a schedule and the money is split by program; the register's columns are the same in both.
-templates: Starter | /delivery/portfolio-map/frqz-portfolio-starter.xlsx | /delivery/portfolio-map/frqz-portfolio-starter-example.xlsx | Four tabs, seven checks ;; Full | /delivery/portfolio-map/frqz-portfolio-full.xlsx | /delivery/portfolio-map/frqz-portfolio-full-example.xlsx | Six tabs, twelve checks
+templates: Starter | /delivery/portfolio-map/frqz-portfolio-starter.xlsx | /delivery/portfolio-map/frqz-portfolio-starter-example.xlsx | Seven tabs ;; Full | /delivery/portfolio-map/frqz-portfolio-full.xlsx | /delivery/portfolio-map/frqz-portfolio-full-example.xlsx | Nine tabs
 ---
 
 # The affordability line
@@ -85,7 +85,7 @@ Ranking the list and deciding what starts or stops stay with people. The criteri
 
 ## The template
 
-There are two versions. Each comes blank, and filled in for a made-up software company that fails some of its own checks on purpose. The Starter has four tabs: the register, the steering log, a Read me, and a Portfolio tab that holds the director, the manager, the objectives and the money there is to spend. Each register row has an owner, a status, dates and money, and works out its own health. Seven checks run across the workbook, and a row that fails one says so in words. The Full version adds a Funding tab for where the money came from, meetings and actions in the steering log, and twelve checks in all. Its register has the same columns, so rows paste across from the Starter.
+There are two versions. Each comes blank, and filled in for a made-up software company that fails some of its own checks on purpose. In the Starter, four of the seven tabs hold the register: the register itself, the steering log, a Read me, and a Portfolio tab that holds the director, the manager, the objectives and the money there is to spend. Each register row has an owner, a status, dates and money, and works out its own health. Seven checks run across them, and a row that fails one says so in words. The other three tabs each have a page of their own: the [Board](/delivery/portfolio/) the steering group reads, [Intake](/delivery/intake-and-scoring/) for new requests, and [Capacity](/delivery/capacity/) for who is free. The Full version adds a Funding tab for where the money came from, meetings and actions in the steering log, and a Checks tab with twelve checks in all. Its register has the same columns, so rows paste across from the Starter.
 
 {{TEMPLATE}}
 
@@ -101,7 +101,7 @@ If you add up the money this week, write to me at [jona@projectcutover.com](mail
 
 ## Connects to
 
-The register draws on two other parts of Delivery: each program's charter says what the program is for, and each project's status report says where it stands.
+The register draws on three other parts of Delivery: each program's charter says what the program is for, each project's status report says where it stands, and intake is where an accepted request comes from.
 
 ## Sources
 

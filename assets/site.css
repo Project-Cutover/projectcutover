@@ -21,6 +21,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange-ink);outline
 h1,h2,h3,h4{text-wrap:balance;line-height:1.15;margin:0;font-weight:700}
 p{margin:0 0 1em}
 code,.mono{font-family:var(--mono);font-size:.86em}
+pre{font-family:var(--mono);font-size:13px;line-height:1.55;background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:14px 16px;margin:0 0 1.2em;max-width:100%;overflow-x:auto;white-space:pre;-webkit-overflow-scrolling:touch}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:40px}
 .label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:8px;z-index:10;background:var(--paper);padding:8px 12px}
@@ -170,7 +171,7 @@ tr:last-child td{border-bottom:0}
   .across{writing-mode:horizontal-tb;flex-wrap:wrap;padding:14px}
   .phases{grid-template-columns:1fr 1fr}
   .layer,.lsec>header,.comp{grid-template-columns:1fr;gap:6px}
-  .pg{grid-template-columns:1fr;padding-block:32px 64px}
+  .pg{grid-template-columns:minmax(0,1fr);padding-block:32px 64px}
   .pg aside{display:none}
   .foot .cols{grid-template-columns:1fr;gap:28px}
   .signup{grid-template-columns:1fr}
@@ -264,3 +265,9 @@ main{flex:1 0 auto}
 .dlf .go a.ex{font-size:14px;color:var(--ink-2)}
 .nb{white-space:nowrap}
 .pg .cover{width:100%;height:auto;margin-top:28px;border:1px solid var(--rule)}
+
+/* layer page: its parts */
+.parts{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:14px}
+.parts li{padding:14px 0;border-top:1px solid var(--rule)}
+.parts li b{display:block;font-size:19px;margin-bottom:4px}
+.parts .q{display:block;color:var(--ink-3);font-size:15px;margin-top:4px}

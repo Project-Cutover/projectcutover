@@ -9,7 +9,8 @@ def inline(t):
     t = re.sub(r'(?<![\w*])\*([^*\n]+)\*(?![\w*])', r'<em>\1</em>', t)
     t = re.sub(r'\[([^\]]+)\]\(((?:https?://|mailto:|/)[^)]+)\)', r'<a href="\2">\1</a>', t)
     t = re.sub(r'(?<![">=])(https?://[^\s<)]+)', r'<a href="\1">\1</a>', t)
-    t = re.sub(r'(\S+?)\[(\d+)\]', r'<span class="nb">\1<sup class="fn">[\2]</sup></span>', t)
+    t = re.sub(r'(\S+?)((?:\[\d+\])+)', lambda m: '<span class="nb">' + m.group(1) + ''.join(
+        f'<sup class="fn">[{n}]</sup>' for n in re.findall(r'\d+', m.group(2))) + '</span>', t)  # one or more marks, e.g. [1][2]
     return t
 
 def table(lines, cell=inline):

@@ -109,14 +109,14 @@ def home_layers(written):
 def map_drawing(written):
     def phase(n):
         l = layer(n)
-        return f'<div class="phase"><span class="label">{esc(n)}</span>{comp_list(l["comps"], written)}</div>'
+        return f'<div class="phase">{layer_label(l, written)}{comp_list(l["comps"], written)}</div>'
     pj = layer('Project')
     phases = ''.join(phase(n) for n in ('Plan', 'Run', 'Cutover', 'Handover'))
-    inner_pj = f'<div class="nest"><span class="label">Project</span>{comp_list(pj["comps"], written)}<div class="phases">{phases}</div></div>'
+    inner_pj = f'<div class="nest">{layer_label(pj, written)}{comp_list(pj["comps"], written)}<div class="phases">{phases}</div></div>'
     pg = layer('Program')
-    inner_pg = f'<div class="nest"><span class="label">Program</span>{comp_list(pg["comps"], written)}{inner_pj}</div>'
+    inner_pg = f'<div class="nest">{layer_label(pg, written)}{comp_list(pg["comps"], written)}{inner_pj}</div>'
     pf = layer('Portfolio')
-    outer = f'<div class="nest"><span class="label">Portfolio</span>{comp_list(pf["comps"], written)}{inner_pg}</div>'
+    outer = f'<div class="nest">{layer_label(pf, written)}{comp_list(pf["comps"], written)}{inner_pg}</div>'
     return f'<div class="map" role="group" aria-label="{esc(C.DELIVERY["map_label"])}">{outer}</div>'
 
 
@@ -164,7 +164,7 @@ def delivery(written):
             title = (f'<a href="/delivery/{c["slug"]}/">{esc(c["name"])}</a>' if c['slug'] in written else esc(c['name']))
             comps += (f'<div class="comp" id="{c["slug"]}"><div></div><div><h3>{title}</h3><p>{inline(c["what"])}</p>'
                       f'<p class="q">{esc(c["q"])}</p><p class="aka"><b>{esc(d["aka_label"])}</b> {esc(c["aka"])}</p></div></div>')
-        secs += (f'<section class="lsec" id="{slugify(l["name"])}"><header><h2>{esc(l["name"])}</h2><p>{inline(l["long"])}</p></header>{comps}</section>')
+        secs += (f'<section class="lsec" id="{slugify(l["name"])}"><header>{layer_label(l, written, 'h2', '')}<p>{inline(l["long"])}</p></header>{comps}</section>')
     body = f'''<section class="wrap" style="padding-block:72px 0">
 <h1 class="h1">{esc(d["h1"])}</h1><p class="stand" style="margin-top:20px"><strong style="color:var(--ink)">{esc(d["sub"])}</strong> {inline(d["stand"])}</p>
 {map_drawing(written)}
@@ -250,6 +250,26 @@ def all_comps():
     return [(l, c) for l in C.LAYERS for c in l['comps']]
 
 
+def entries():
+    """Every page Delivery can have, in reading order: each layer's own page, then its parts."""
+    out = []
+    for l in C.LAYERS:
+        out.append({'kind': 'layer', 'name': l['name'], 'slug': slugify(l['name']), 'layer': l, 'q': l['short']})
+        out += [dict(c, kind='part', layer=l) for c in l['comps']]
+    return out
+
+
+def layer_label(l, written, tag='span', cls='label'):
+    s = slugify(l['name'])
+    inner = f'<a href="/delivery/{s}/">{esc(l["name"])}</a>' if s in written else esc(l['name'])
+    return f'<{tag} class="{cls}">{inner}</{tag}>' if cls else f'<{tag}>{inner}</{tag}>'
+
+
+def parts_block(l, written):
+    rows = ''.join(f'<li><b>{link_or_text(c, written)}</b> {inline(c["what"])} <span class="q">{esc(c["q"])}</span></li>' for c in l['comps'])
+    return f'<ul class="parts">{rows}</ul>'
+
+
 def link_or_text(c, written):
     return f'<a href="/delivery/{c["slug"]}/">{esc(c["name"])}</a>' if c['slug'] in written else esc(c['name'])
 
@@ -264,10 +284,12 @@ def piece(meta, md, written):
     hl = [l for l in head.strip().split('\n') if l.strip()]
     title = hl[0].lstrip('# ').strip()
     dateline, story = hl[1], hl[2:]
-    seq = all_comps()
-    idx = next(i for i, (_, c) in enumerate(seq) if c['slug'] == meta['slug'])
-    lay, comp = seq[idx]
-    by_name = {c['name']: c for _, c in seq}
+    seq = entries()
+    idx = next(i for i, e in enumerate(seq) if e['slug'] == meta['slug'])
+    comp = seq[idx]
+    lay = comp['layer']
+    is_layer = comp['kind'] == 'layer'
+    by_name = {c['name']: c for _, c in all_comps()}
     nav, body, sources, connects = [], '', '', ''
     for s in secs:
         h, _, b = s.partition('\n')
@@ -288,26 +310,29 @@ def piece(meta, md, written):
             continue
         sid = slugify(h)
         nav.append((sid, h))
-        html_b = convert(b.replace('{{TEMPLATE}}', '\n\nTEMPLATEBLOCK\n\n'))
-        html_b = html_b.replace('<p>TEMPLATEBLOCK</p>', template_block(meta))
+        html_b = convert(b.replace('{{TEMPLATE}}', '\n\nTEMPLATEBLOCK\n\n').replace('{{PARTS}}', '\n\nPARTSBLOCK\n\n'))
+        html_b = html_b.replace('<p>TEMPLATEBLOCK</p>', template_block(meta)).replace('<p>PARTSBLOCK</p>', parts_block(lay, written))
         body += f'<section><h2 id="{sid}">{esc(h)}</h2>{html_b}</section>'
     side = ''.join(f'<a href="#{i}">{esc(h)}</a>' for i, h in nav)
-    prev_ = seq[idx - 1][1] if idx > 0 else None
-    next_ = seq[idx + 1][1] if idx + 1 < len(seq) else None
+    prev_ = seq[idx - 1] if idx > 0 else None
+    next_ = seq[idx + 1] if idx + 1 < len(seq) else None
     pn = ''
     if prev_:
         pn += f'<span><span class="k">{esc(L["prev"])}</span> {pn_link(prev_, written)}</span>'
     if next_:
         pn += f'<span><span class="k">{esc(L["next"])}</span> {pn_link(next_, written)}</span>'
     cover = (f'<img class="cover" src="{meta["cover"]}" alt="" width="1200" height="630">' if meta.get('cover') else '')
+    lay_href = f'/delivery/{slugify(lay["name"])}/' if slugify(lay['name']) in written else f'/delivery/#{slugify(lay["name"])}'
+    crumb = (f'<a href="/delivery/">Delivery</a> / {esc(lay["name"])}' if is_layer else
+             f'<a href="/delivery/">Delivery</a> / <a href="{lay_href}">{esc(lay["name"])}</a> / {esc(comp["name"])}')
     words = len(re.findall(r'\w+', md))
     minutes = max(1, round(words / 230))
     art = f'''<div class="wrap pg"><aside aria-label="{esc(L["on_page"])}"><div class="label" style="margin-bottom:10px">{esc(L["on_page"])}</div>{side}</aside>
 <article>
-<div class="crumb"><a href="/delivery/">Delivery</a> / <a href="/delivery/#{slugify(lay["name"])}">{esc(lay["name"])}</a> / {esc(comp["name"])}</div>
+<div class="crumb">{crumb}</div>
 <h1 class="h1">{esc(title)}</h1>
-<p class="answers">{esc(comp["q"])}</p>
-<div class="meta">{esc(L["meta"].format(date=meta.get("published", ""), minutes=minutes))}</div>
+<p class="answers">{esc(meta.get("answers") or comp["q"])}</p>
+<div class="meta">{esc(L["meta"].format(date=meta.get("published", ""), minutes=minutes).lstrip(" ·"))}</div>
 {cover}<div class="dateline">{esc(dateline)}</div>
 {convert((chr(10)*2).join(story))}
 {body}
@@ -323,7 +348,8 @@ def piece(meta, md, written):
 def template_block(meta):
     """meta['templates']: 'Label | blank.xlsx | example.xlsx | note' entries separated by ' ;; '."""
     L = C.PIECE
-    shot = f'<a href="{meta["template_shot"]}"><img class="shot" src="{meta["template_shot"]}" alt="{esc(L["dl_alt"])}" width="1500" height="502" loading="lazy"></a>' if meta.get('template_shot') else ''
+    w, h = meta.get('_shot_wh', (1500, 502))
+    shot = f'<a href="{meta["template_shot"]}"><img class="shot" src="{meta["template_shot"]}" alt="{esc(L["dl_alt"])}" width="{w}" height="{h}" loading="lazy"></a>' if meta.get('template_shot') else ''
     files = ''
     for entry in [e for e in meta.get('templates', '').split(';;') if e.strip()]:
         label, blank, example, note = [x.strip() for x in entry.split('|')]
@@ -362,7 +388,13 @@ def build(out, pieces_dir):
     }
     for meta, md, p in pieces:
         pages[f'delivery/{meta["slug"]}/index.html'] = piece(meta, md, written)
-        for href in template_files(meta) + [meta[k] for k in ('template_shot', 'cover') if meta.get(k)]:
+        if meta.get('template_shot'):
+            png = p.parent / Path(meta['template_shot']).name
+            if png.exists():
+                b = png.read_bytes()[16:24]
+                meta['_shot_wh'] = (int.from_bytes(b[:4], 'big'), int.from_bytes(b[4:], 'big'))
+        extra = [x.strip() for x in meta.get('files', '').split(',') if x.strip()]
+        for href in template_files(meta) + extra + [meta[k] for k in ('template_shot', 'cover') if meta.get(k)]:
             if href:
                 src = p.parent / Path(href).name
                 if not src.exists():
