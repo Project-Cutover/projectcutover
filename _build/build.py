@@ -19,7 +19,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
 THEME_EARLY = ("<script>try{var t=localStorage.getItem('pc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>")
 SCRIPT = '''<script>
 (function(){var r=document.documentElement,b=document.getElementById('theme');if(!b)return;
-function dark(){var t=r.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+function dark(){return r.getAttribute('data-theme')!=='light'}
 function label(){b.textContent=dark()?'Light':'Dark';b.setAttribute('aria-label',dark()?'Switch to the light theme':'Switch to the dark theme')}
 b.addEventListener('click',function(){var n=dark()?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('pc-theme',n)}catch(e){}label()});label();})();
 </script>'''
@@ -72,7 +72,7 @@ def chrome(current, title, desc, body, path):
 <header class="top"><div class="wrap">
 <a class="brand" href="/"><img class="iris" src="/assets/iris-64.png" alt="" width="30" height="30"><span>Project Cutover</span></a>
 <nav class="nav" aria-label="Site">{nav}<a class="btn sm" href="/newsletter/">{esc(C.SUBSCRIBE)}</a></nav>
-<button class="toggle" id="theme" type="button">Dark</button>
+<button class="toggle" id="theme" type="button">Light</button>
 </div></header>
 <main id="main">
 {body}

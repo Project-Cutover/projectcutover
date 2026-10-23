@@ -21,7 +21,7 @@
 <header class="top"><div class="wrap">
 <a class="brand" href="/"><img class="iris" src="/assets/iris-64.png" alt="" width="30" height="30"><span>Project Cutover</span></a>
 <nav class="nav" aria-label="Site"><a href="/delivery/" aria-current=page>Delivery</a><a href="/about/">About</a><a class="btn sm" href="/newsletter/">Subscribe</a></nav>
-<button class="toggle" id="theme" type="button">Dark</button>
+<button class="toggle" id="theme" type="button">Light</button>
 </div></header>
 <main id="main">
 <div class="wrap pg"><aside aria-label="On this page"><div class="label" style="margin-bottom:10px">On this page</div><a href="#what-a-portfolio-is-for">What a portfolio is for</a><a href="#read-what-s-there">Read what&#x27;s there</a><a href="#draft">Draft</a><a href="#test">Test</a><a href="#keep-it-current">Keep it current</a><a href="#when-an-agent-does-part-of-it">When an agent does part of it</a><a href="#the-template">The template</a><a href="#the-first-week">The first week</a><a href="#connects-to">Connects to</a><a href="#sources">Sources</a></aside>
@@ -64,7 +64,7 @@
 </div><div class="bottom">© 2026 Project Cutover</div></div></footer>
 <script>
 (function(){var r=document.documentElement,b=document.getElementById('theme');if(!b)return;
-function dark(){var t=r.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+function dark(){return r.getAttribute('data-theme')!=='light'}
 function label(){b.textContent=dark()?'Light':'Dark';b.setAttribute('aria-label',dark()?'Switch to the light theme':'Switch to the dark theme')}
 b.addEventListener('click',function(){var n=dark()?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('pc-theme',n)}catch(e){}label()});label();})();
 </script>
