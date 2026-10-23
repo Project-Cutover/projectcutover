@@ -263,3 +263,4 @@ main{flex:1 0 auto}
 .dl img.shot{aspect-ratio:auto;object-fit:contain;height:auto}
 .dlf .go a.ex{font-size:14px;color:var(--ink-2)}
 .nb{white-space:nowrap}
+.pg .cover{width:100%;height:auto;margin-top:28px;border:1px solid var(--rule)}

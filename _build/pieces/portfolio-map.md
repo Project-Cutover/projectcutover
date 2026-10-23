@@ -8,6 +8,7 @@ desc: What are we running, and who owns each one? How HMRC's war room cut its li
 draws_on: Status report, Program charter and benefits
 feeds_into: Intake and scoring, Capacity, Program meetings, Project charter
 template_name: Portfolio workbook
+cover: /delivery/portfolio-map/portfolio-map-cover.png
 template_shot: /delivery/portfolio-map/frqz-portfolio-register.png
 template_text: Start with the Starter. Move to the Full when the steering group meets on a schedule and the money is split by program; the register's columns are the same in both.
 templates: Starter | /delivery/portfolio-map/frqz-portfolio-starter.xlsx | /delivery/portfolio-map/frqz-portfolio-starter-example.xlsx | Four tabs, seven checks ;; Full | /delivery/portfolio-map/frqz-portfolio-full.xlsx | /delivery/portfolio-map/frqz-portfolio-full-example.xlsx | Six tabs, twelve checks

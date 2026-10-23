@@ -38,7 +38,7 @@ FRQZ = ('<svg class="frqz-mark" viewBox="0 0 18 18" width="14" height="14" aria-
         '<rect x="11" y="5" width="3" height="8" fill="currentColor"/><rect x="14" y="7" width="3" height="4" fill="currentColor"/></svg>')
 
 
-def chrome(current, title, desc, body, path):
+def chrome(current, title, desc, body, path, image='/assets/iris-480.png'):
     nav = ''.join(f'<a href="{href}"{" aria-current=page" if key == current else ""}>{esc(name)}</a>'
                   for key, name, href in C.NAV)
     canonical = f'https://projectcutover.com{path}'
@@ -60,7 +60,8 @@ def chrome(current, title, desc, body, path):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="https://projectcutover.com/assets/iris-480.png">
+<meta property="og:image" content="https://projectcutover.com{image}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/iris-64.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/iris-192.png">
 {FONTS}
@@ -298,6 +299,7 @@ def piece(meta, md, written):
         pn += f'<span><span class="k">{esc(L["prev"])}</span> {pn_link(prev_, written)}</span>'
     if next_:
         pn += f'<span><span class="k">{esc(L["next"])}</span> {pn_link(next_, written)}</span>'
+    cover = (f'<img class="cover" src="{meta["cover"]}" alt="" width="1200" height="630">' if meta.get('cover') else '')
     words = len(re.findall(r'\w+', md))
     minutes = max(1, round(words / 230))
     art = f'''<div class="wrap pg"><aside aria-label="{esc(L["on_page"])}"><div class="label" style="margin-bottom:10px">{esc(L["on_page"])}</div>{side}</aside>
@@ -306,7 +308,7 @@ def piece(meta, md, written):
 <h1 class="h1">{esc(title)}</h1>
 <p class="answers">{esc(comp["q"])}</p>
 <div class="meta">{esc(L["meta"].format(date=meta.get("published", ""), minutes=minutes))}</div>
-<div class="dateline">{esc(dateline)}</div>
+{cover}<div class="dateline">{esc(dateline)}</div>
 {convert((chr(10)*2).join(story))}
 {body}
 <div class="close"><p style="margin:0 0 14px;font-weight:600">{esc(L["close_h"])}</p><a class="btn" href="{C.SUBSTACK}">{esc(L["close_btn"])}</a></div>
@@ -314,7 +316,8 @@ def piece(meta, md, written):
 {sources}
 <nav class="pn" aria-label="Previous and next">{pn}</nav>
 </article></div>'''
-    return chrome('delivery', f'{title} · {comp["name"]} · Project Cutover', meta.get('desc', comp['q']), art, f'/delivery/{meta["slug"]}/')
+    return chrome('delivery', f'{title} · {comp["name"]} · Project Cutover', meta.get('desc', comp['q']), art, f'/delivery/{meta["slug"]}/',
+                  meta.get('cover', '/assets/iris-480.png'))
 
 
 def template_block(meta):
@@ -359,7 +362,7 @@ def build(out, pieces_dir):
     }
     for meta, md, p in pieces:
         pages[f'delivery/{meta["slug"]}/index.html'] = piece(meta, md, written)
-        for href in template_files(meta) + ([meta['template_shot']] if meta.get('template_shot') else []):
+        for href in template_files(meta) + [meta[k] for k in ('template_shot', 'cover') if meta.get(k)]:
             if href:
                 src = p.parent / Path(href).name
                 if not src.exists():
