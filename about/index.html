@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Project Cutover</title>
+<meta name="description" content="Who writes Project Cutover, and how to get in touch.">
+<link rel="canonical" href="https://projectcutover.com/about/">
+<meta property="og:title" content="About · Project Cutover">
+<meta property="og:description" content="Who writes Project Cutover, and how to get in touch.">
+<meta property="og:url" content="https://projectcutover.com/about/">
+<meta property="og:image" content="https://projectcutover.com/assets/iris-480.png">
+<link rel="icon" href="/assets/iris-64.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/iris-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script>try{var t=localStorage.getItem('pc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="/"><img class="iris" src="/assets/iris-64.png" alt="" width="30" height="30"><span>Project Cutover</span></a>
+<nav class="nav" aria-label="Site"><a href="/delivery/">Delivery</a><a href="/about/" aria-current=page>About</a><a class="btn sm" href="/newsletter/">Subscribe</a></nav>
+<button class="toggle" id="theme" type="button">Dark</button>
+</div></header>
+<main id="main">
+<section class="wrap page">
+<header class="phead"><h1 class="h1">About</h1><p class="stand">Project Cutover is about how software delivery gets run, from the portfolio to the handover.</p></header>
+<div class="rows"><div class="row"><h2>Who&#x27;s behind it</h2><div><p>Jona Venzor has run software implementations and cutovers for about ten years, in hospitality, banking, gaming and cloud hosting. The largest ran to thousands of tasks across more than 100 people.</p></div></div><div class="row"><h2>Get in touch</h2><div><p>Write to <a href="mailto:jona@projectcutover.com">jona@projectcutover.com</a>.</p></div></div></div>
+<p class="cta"><a class="btn" href="https://jonavenzor.substack.com/subscribe">Subscribe on Substack</a></p></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="lock"><img class="iris" src="/assets/iris-64.png" alt="" width="40" height="40"><div><b>Project Cutover</b></div></div>
+<div class="credit"><svg class="frqz-mark" viewBox="0 0 18 18" width="14" height="14" aria-hidden="true"><rect x="0" y="3" width="3" height="12" fill="currentColor"/><rect x="7" y="0" width="3" height="18" fill="currentColor"/><rect x="11" y="5" width="3" height="8" fill="currentColor"/><rect x="14" y="7" width="3" height="4" fill="currentColor"/></svg><span>Project Cutover is brought to you by FRQZ.</span></div></div>
+<div><div class="label">Read</div><ul><li><a href="/delivery/">Delivery</a></li><li><a href="/about/">About</a></li><li><a href="/newsletter/">Newsletter</a></li></ul></div>
+<div><div class="label">Contact</div><ul><li><a href="mailto:jona@projectcutover.com">jona@projectcutover.com</a></li><li><a href="https://jonavenzor.substack.com/subscribe">Subscribe on Substack</a></li></ul></div>
+</div><div class="bottom">© 2026 Project Cutover</div></div></footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('theme');if(!b)return;
+function dark(){var t=r.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+function label(){b.textContent=dark()?'Light':'Dark';b.setAttribute('aria-label',dark()?'Switch to the light theme':'Switch to the dark theme')}
+b.addEventListener('click',function(){var n=dark()?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('pc-theme',n)}catch(e){}label()});label();})();
+</script>
+</body>
+</html>
