@@ -41,8 +41,8 @@ LAYERS = [
     {'name': 'Project', 'short': 'One piece of work with a sponsor and an end date.', 'comps': [
         comp('Project charter', "What the project is for, who sponsors it, what it can spend and what's out of scope.",
              'Answers: why are we doing this, and where does it stop?', 'project initiation document (PID), project brief, terms of reference'),
-        comp('What finished looks like', 'One page the sponsor signs, saying what live means for this project and how someone could test it.',
-             "Answers: how will we know we're done?", 'acceptance criteria, success criteria, definition of done'),
+        comp('Acceptance and sign-off', 'One page the sponsor signs, saying what live means for this project and how someone could test it.',
+             "Answers: how will we know we're done?", 'what finished looks like, acceptance criteria, success criteria, definition of done'),
         comp('RACI', "For each decision, who does the work, who answers for it, who's asked first and who's told after. The letters stand for responsible, accountable, consulted and informed.",
              'Answers: who decides this?', 'responsibility assignment matrix, RASCI'),
         comp('Stakeholders and communication', 'Everyone the project affects, and what each of them needs to hear and when.',
@@ -68,7 +68,7 @@ LAYERS = [
     {'name': 'Cutover', 'short': 'The days around go-live, when the new system takes over from the old one.', 'comps': [
         comp('Readiness and go/no-go', 'The criteria that decide whether go-live happens, agreed weeks ahead, and the one person who makes the call.',
              'Answers: are we ready to go live?', 'go/no-go criteria, operational readiness review, launch readiness'),
-        comp('Cutover plan and rollback', 'Every task in the cutover window in order, each with an owner and a way to undo it.',
+        comp('Cutover plan and rollback', 'Every task in the cutover window in order, each with an owner, and every change with a way to undo it.',
              'Answers: what happens during cutover, and how do we back out?', 'cutover runbook, implementation plan, backout plan, fallback plan'),
         comp('Rollout', 'Who gets the new system first, and what has to be true before it reaches everyone else.',
              'Answers: who gets it first?', 'phased rollout, pilot, canary release, day one')]},

@@ -1,12 +1,12 @@
 <!-- style-gate: allow (sources quoted verbatim) -->
 ---
 slug: portfolio-map
-status: v1, approved by Jona 2026-10-22 with notes applied; v1.1 for Wave 1, passed by Jona and published 2026-10-23: the workbook replaced by v4 under the same links, its template paragraph, preview and connections updated to match. The live text is in superseded/live-2026-10-22/.
+status: v1, approved by Jona 2026-10-22 with notes applied; v1.1 for Wave 1, passed by Jona and published 2026-10-23: the workbook replaced by v4 under the same links, its template paragraph, preview and connections updated to match. v1.2 with Waves 2 to 7, passed by Jona 2026-10-24: connections to the new pages both ways (review/connections-2026-10-24.md § 3), and the workbook's Planned finish help says close, not go-live. The live text is in superseded/live-2026-10-22/.
 evidence: every figure and quote opened at source by the lead on 2026-10-22; rows in ~/cutover/evidence/portfolio-map.md
 published: 22 October 2026
 desc: What are we running, and who owns each one? How HMRC's war room cut its list in 2017, and how to build your own portfolio register, with a workbook to download.
-draws_on: Status report, Program charter and benefits, Intake and scoring
-feeds_into: Intake and scoring, Capacity, Program meetings, Project charter
+draws_on: Status report, Program charter and benefits, Intake and scoring, Project close
+feeds_into: Intake and scoring, Capacity, Program charter and benefits, Program meetings, Roadmap and dependencies, Project charter, Acceptance and sign-off, RACI, Stakeholders and communication, Handover and ownership, Project close
 template_name: Portfolio workbook
 cover: /delivery/portfolio-map/portfolio-map-cover-2.png
 template_shot: /delivery/portfolio-map/frqz-portfolio-register-2.png
@@ -101,7 +101,7 @@ If you add up the money this week, write to me at [jona@projectcutover.com](mail
 
 ## Connects to
 
-The register draws on three other parts of Delivery: each program's charter says what the program is for, each project's status report says where it stands, and intake is where an accepted request comes from.
+The register draws on four other parts of Delivery: each program's charter says what the program is for, each project's status report says where it stands, intake is where an accepted request comes from, and the project close is where a project's Status and Forecast spend change once Close is decided. Each program's charter and roadmap read the register for the program and its projects, and each project's charter, acceptance and sign-off, RACI, stakeholders, handover and ownership and project close start from its row.
 
 ## Sources
 

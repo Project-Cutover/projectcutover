@@ -311,7 +311,10 @@ def piece(meta, md, written):
         sid = slugify(h)
         nav.append((sid, h))
         html_b = convert(b.replace('{{TEMPLATE}}', '\n\nTEMPLATEBLOCK\n\n').replace('{{PARTS}}', '\n\nPARTSBLOCK\n\n'))
-        html_b = html_b.replace('<p>TEMPLATEBLOCK</p>', template_block(meta)).replace('<p>PARTSBLOCK</p>', parts_block(lay, written))
+        if '<p>TEMPLATEBLOCK</p>' in html_b:
+            html_b = html_b.replace('<p>TEMPLATEBLOCK</p>', template_block(meta))
+        if '<p>PARTSBLOCK</p>' in html_b:
+            html_b = html_b.replace('<p>PARTSBLOCK</p>', parts_block(lay, written))
         body += f'<section><h2 id="{sid}">{esc(h)}</h2>{html_b}</section>'
     side = ''.join(f'<a href="#{i}">{esc(h)}</a>' for i, h in nav)
     prev_ = seq[idx - 1] if idx > 0 else None
