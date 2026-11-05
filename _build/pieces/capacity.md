@@ -8,7 +8,7 @@ desc: Who's free to do it? How NASA's Jet Propulsion Laboratory ran six large mi
 draws_on: Portfolio map, Project charter, Estimates
 feeds_into: Intake and scoring, Roadmap and dependencies, Schedule
 template_name: Capacity, in the portfolio workbook
-cover: /delivery/capacity/capacity-cover.png
+cover: /delivery/capacity/capacity-cover-2.png
 template_shot: /delivery/capacity/frqz-portfolio-capacity.png
 template_text: Capacity is the same tab in the Starter and the Full, so start with the Starter. The brief for an assistant is [a text file](/delivery/capacity/frqz-capacity-agent-brief.txt) beside it.
 templates: Starter | /delivery/portfolio-map/frqz-portfolio-starter.xlsx | /delivery/portfolio-map/frqz-portfolio-starter-example.xlsx | Seven tabs ;; Full | /delivery/portfolio-map/frqz-portfolio-full.xlsx | /delivery/portfolio-map/frqz-portfolio-full-example.xlsx | Nine tabs
@@ -25,23 +25,23 @@ By December 2018 Clipper was 67 full-time staff short of the 701 its plan called
 
 The people Clipper needed were wanted by at least four other major projects at the laboratory, two of them billion-dollar missions with firm launch dates. One of the four was Psyche, a mission to a metal-rich asteroid, due to launch in 2022.[1][2] NASA headquarters and the laboratory's managers knew, and the only fix they had proposed was to move people from other JPL projects "when they become available", with priority going to whichever project was due to launch soonest. The NASA Inspector General, reporting in May 2019, called it a "robbing Peter to pay Paul" approach.[1]
 
-The same report looked ahead to the lander. To make its launch date it would have to start in 2019, and would compete for the same people as five other major projects at JPL. Its managers had the laboratory's commitments for staff in 2019 and 2020; the Inspector General was "skeptical of these commitments". It recommended working out the critical technical staff each project would need over the next five years, and reassessing the lander's timeline "given resource availability". NASA agreed with nine of its ten recommendations, and not with the tenth, on reassessing the risks of the rocket.[1]
+The same report looked ahead to the lander. To launch in 2026, a year after the date Congress had set, it would have to start in 2019, and would compete for the same people as five other major projects at JPL. Its managers had the laboratory's commitments for staff in 2019 and 2020; the Inspector General was "skeptical of these commitments". It recommended working out the critical technical staff each project would need over the next five years, and reassessing the lander's timeline "given resource availability". NASA agreed with nine of its ten recommendations. The one it turned down asked it to reassess Clipper's launch vehicle risks.[1]
 
 In May 2022 Psyche missed its primary launch period, and in June it was decided that a 2022 launch was not viable with acceptable risk. A review board set up by NASA and the laboratory agreed that the immediate causes were guidance and navigation software that reached the testbed about eight months late, and testbeds that weren't ready. It found other problems that could each have delayed the launch on their own. Communication had broken down badly, and COVID-19 had left the teams more isolated.[2]
 
 The board found a "large imbalance" between the laboratory's work and its people, and called it "a root cause" of Psyche's issues. JPL was running six large spaceflight projects at once, Clipper and Psyche among them, the broadest and most demanding workload in its history. Psyche had no project chief engineer and no lead engineer for guidance and navigation, and too many people in "stretch assignments", roles different from the ones they had experience in. The board asked for 10 to 12 more experienced leaders on the project.[2]
 
-Not all of the load was the laboratory's to refuse. Congress had directed both Europa missions and set their dates,[1] and commercial space firms nearby were hiring the same engineers at substantially higher salaries. The board found the Psyche team exceptionally hardworking, and NASA and JPL concurred with every recommendation, two of them in intent. NASA funded Psyche toward a new launch date in October 2023.[2]
+Not all of it was the laboratory's to control. Congress had directed both Europa missions and set their dates,[1] and commercial space firms nearby were hiring the same engineers at substantially higher salaries. The board found the Psyche team exceptionally hardworking, and found the laboratory short on the other key practices it scored. NASA and JPL concurred with every recommendation, two sets of them only in intent. NASA funded Psyche toward a new launch date in October 2023.[2]
 
-The first option on the board's list for getting back to balance was "No new flight projects until balance is achieved". NASA's answer was to postpone another of the six, the VERITAS mission to Venus, by about three years to no earlier than 2031. It said that would "provide some offset" to the imbalance.[2]
+The first option on the board's list for getting back to balance was "No new flight projects until balance is achieved". NASA's answer was to postpone another of the six, the VERITAS mission to Venus, by about three years to no earlier than 2031. It said that would "provide some offset" to the imbalance for at least three years, and to the extra money Psyche needed to launch in 2023.[2]
 
 Clipper's gap could be counted because Clipper had a plan for its own people: 701 for that period, 717 by May. The people it needed were wanted by at least four other projects too, and the only rule proposed for sharing them was the order of the launch dates.
 
 ## What capacity is for
 
-Capacity is a count of the people who do project work, the days each of them has in each of the coming weeks, and the days already promised to work that's running. What's left is who's free, counted before anything new starts. The field calls it capacity planning or resource management. In a company of 40 it might be 15 names over the next 13 weeks; Clipper alone planned for 701 full-time staff.[1]
+Capacity is a count of the people who do project work, the days each of them has in each of the coming weeks, and the days already promised to work that's running. What's left is who's free, counted before anything new starts. You may also know it as capacity planning or resource management. In a company of 40 it might be 15 names over the next 13 weeks; Clipper alone planned for 701 full-time staff.[1]
 
-The UK government's standard for project delivery, GovS 002, says resource, capacity and capability management "balances the supply and demand for appropriate resources (such as skilled people, equipment, material and facilities)". It asks for a view of future needs "with possible shortfalls identified and addressed", and says that where there aren't enough, "work should be re-planned to reflect such constraints".[3] The portfolio manager keeps the count. Intake and scoring weighs whether a request is worth taking on, and takes its free days from this count.
+The UK government's standard for project delivery, GovS 002, says resource, capacity and capability management "balances the supply and demand for appropriate resources (such as skilled people, equipment, material and facilities)". It asks for a view of future needs "with possible shortfalls identified and addressed", and says that where there aren't enough, "work should be re-planned to reflect such constraints".[3] The portfolio manager keeps the count. Intake and scoring weighs whether a request is worth taking on, and shows this count beside the free days you type there.
 
 ## Read what's there
 
@@ -134,7 +134,7 @@ If you count it this week, write to me at [jona@projectcutover.com](mailto:jona@
 
 ## Connects to
 
-Capacity draws on the portfolio map, whose register gives it the rows to book against, and on each project's charter and estimates, which say who the project needs and for how many days. Intake and scoring checks a request against the free days counted here, and the roadmap and the schedule use them to test a start date.
+Capacity draws on the portfolio map, whose register gives it the rows to book against, and on each project's charter and estimates, which say who the project needs and for how many days. Intake and scoring shows the free days counted here beside the figure it checks a request against, and the roadmap and the schedule use them to test a start date.
 
 ## Sources
 

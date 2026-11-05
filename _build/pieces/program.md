@@ -29,7 +29,7 @@ The Auditor-General's inquiry found that HBL "had no programme management office
 
 In March 2015 the board approved a "pared-down" program, without the shared finance services or the combined warehousing and logistics. It was forecast to cost $120 million, including what had been spent, and to be complete in 2018.[1]
 
-The Auditor-General found some of the same causes in other HBL programs, and a second problem in how HBL counted. From July 2010 to June 2014 it reported $301.8 million of gross savings across the sector. The inquiry put $71 million of that down to HBL directly, and the program's share of that was $0.4 million.[1] At first HBL did little to test the figures the boards sent in.[1]
+The Auditor-General found some of the same causes in other HBL programs. From July 2010 to June 2014 HBL reported $301.8 million of gross savings for the sector, including savings from deals the boards and other agencies ran. $71 million of it came directly from HBL's own work, and the program's share of that was $0.4 million.[1] At first HBL did little to test the figures the boards sent in, which in the auditor's view reduced confidence in the numbers.[1]
 
 In the three years to June 2014, the first three of the five, savings came to $247.7 million against an estimate of $220 million. HBL's managers and board followed good practice in approving the business cases, and the board's changes in early 2014 improved the program's governance. The district health boards, the auditor found, shared responsibility for the program.[1] As for the program's own benefits, the auditor wrote in 2015 that it was too early to say.[1]
 
@@ -51,7 +51,7 @@ The standard expects both to have support, from what most people call a program 
 
 A program decides how its projects fit together: the order they run in and what each needs from the others and by when. When a milestone is under threat, it trades time, cost and benefits against each other. The Auditor-General said one integrated plan for HBL, showing the critical paths and dependencies, would have helped with those decisions.[1]
 
-It works inside limits set from above. GovS 002 asks for tolerances on cost, benefits and schedule within which a manager needn't escalate, and the sponsoring body decides anything beyond the senior responsible owner's authority.[2] The [portfolio](/delivery/portfolio/) starts the program. Each tranche ends in a Strategic review, chaired by the sponsor, which can continue, adjust or stop the program within the portfolio's limits. The review goes to portfolio steering, which authorises the next tranche, a decision GovS 002 names.[2] A project's gates are decided by the people its gate map names, with the program manager consulted.
+It works inside limits set from above. GovS 002 asks for tolerances on cost, benefits and schedule within which a manager needn't escalate, and the sponsoring body makes, or refers upward, any decision beyond the senior responsible owner's authority.[2] The [portfolio](/delivery/portfolio/) starts the program. Each tranche ends in a Strategic review, chaired by the sponsor, which can continue, adjust or stop the program within the portfolio's limits. The review goes to portfolio steering, which authorises the next tranche, a decision GovS 002 names.[2] A project's gates are decided by the people its gate map names, with the program manager consulted.
 
 ## What the program board reads
 
@@ -95,7 +95,7 @@ or Status, and you never mark an action Done.
 Return one table: step, item, what you found, and the tab and cell you read it from.
 ```
 
-In a test of the full brief on the Example, with its Register, charter and board notes, an assistant found every planted fault and filled no field a person owns. It also misread two Asked on dates, and its answers came out right only because both wrong dates fell inside the limit. So check the cells as well as the answers: recount one Asked dependency from its Asked on date, rework one benefit's shortfall, and check one drafted action against the notes. Also look for a Proposed project counted in the outcome date, and an owner picked where the notes name two.
+In a test of the full brief on the Example, with its Register, charter and board notes, an assistant found every planted fault and filled no field a person owns. It also misread two Asked on dates, and its answers came out right only because both wrong dates fell inside the limit, so the brief now asks for each Asked on date and its count. So check the cells as well as the answers: recount one Asked dependency from its Asked on date, rework one benefit's shortfall, and check one drafted action against the notes. Also look for a Proposed project counted in the outcome date, and an owner picked where the notes name two.
 
 The program manager keeps the workbook and takes the Dashboard to the board, and each benefit's owner types its reads and Forecast.
 

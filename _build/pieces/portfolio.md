@@ -27,13 +27,13 @@ The Government Accountability Office found that case when it checked 80 investme
 
 Some of the work left the page altogether. The Department of Energy moved several of its supercomputer investments out of its IT reporting by calling them facilities, which took $368 million off, almost a quarter of its IT spending in 2012. The Department of Commerce took the ground systems for its satellites off, another $447 million. A member of the budget office's staff told the auditors it "could not stop agencies from making such recategorizations".[1]
 
-In 2016 GAO tried again with 95 investments still being built, scoring each one from its own risk register. Its score showed more risk than the chief information officer's rating 60 times, the same 22 times and less 13 times. Twenty-three of the investments were green on the Dashboard and red on GAO's score.[2] GAO's scores were a judgement too, and three agencies said their ratings were right. GAO's view was that many of the ratings "minimized the potential severity and impact of high risk scores".[2]
+In 2016 GAO tried again with 95 investments still being built, scoring each one mainly from its own risk register. Its score showed more risk than the chief information officer's rating 60 times, the same 22 times and less 13 times. Twenty-three of the investments were green on the Dashboard and red on GAO's score.[2] GAO's scores were a judgement too, and three agencies disagreed, saying their ratings were adequate. GAO's view was that many of the ratings "minimized the potential severity and impact of high risk scores".[2]
 
-The Dashboard put a whole portfolio on one page, and a reader could see every investment on it. From the page alone they couldn't tell how old a colour was, or whether it had been worked out from the numbers or chosen by a person.
+The Dashboard put a whole portfolio on one page, and a reader could see every investment on it. The colours worked out from dates and money sat beside the chief information officer's rating, and that rating could stay the same for months while the documents behind it got worse.
 
 ## What a portfolio is
 
-A portfolio is all the work an organisation has under way that draws on the same money and the same people, kept as one list by someone who can stop things on it. It holds programs and projects, and it keeps going after they end. New work keeps arriving and old work keeps closing, so its reviews come round on a cycle instead of at the end of a stage.[4]
+A portfolio is all the work an organisation has under way that draws on the same money and the same people, kept as one list by someone who can stop things on it. It holds programs and projects, and it keeps going after they end. Its life runs in a cycle with no end, so its reviews aren't tied to the end of a stage the way a project's are.[4]
 
 The list itself has its own page, the [portfolio map](/delivery/portfolio-map/).
 
@@ -41,11 +41,11 @@ The list itself has its own page, the [portfolio map](/delivery/portfolio-map/).
 
 The UK government's standard for project delivery, GovS 002, names two people. The portfolio director answers "for the direction and governance of the portfolio", getting the benefits it was set up for at a risk the organisation can accept. The portfolio manager plans and runs the portfolio as a whole, watches spend against the budget and the benefits as they come in, and makes sure information reaches the people deciding.[3]
 
-Most portfolios also have a board or steering group, chaired by the director, where its decisions get made. In a company of 40 the director might be the chief executive, and the board might be the leadership meeting on a Monday morning.
+I'd also have a board or steering group where its decisions get made, chaired by the director. GovS 002 allows the other way round too: a portfolio board the director answers to. In a company of 40 the director might be the chief executive, and the board might be the leadership meeting on a Monday morning.
 
 ## What it decides
 
-The portfolio decides what starts and what stops. GovS 002 lists the decisions as approving portfolio plans, starting a programme or project, authorising the start of a project's next stage or a programme's next tranche, and "pausing, terminating or closing work".[3]
+The portfolio decides what starts and what stops. Among the decisions GovS 002 lists for project delivery are approving portfolio plans, starting a programme or project, authorising a programme's next tranche, and "pausing, terminating or closing work".[3]
 
 Everything below that is delegated. A program decides how its projects fit together and a project decides how its work gets done, inside the money and priority the portfolio gives them. The report the board reads comes back up from them.
 

@@ -14,7 +14,7 @@ desc: Planning a project up to the gate where its plan is baselined, and who ans
 
 May 2006 · Électricité de France
 
-Électricité de France (EDF), the French state-controlled electricity company, wanted to build a new kind of reactor at Flamanville, in Normandy.[2] The European Pressurized Reactor (EPR) there would be the "head of series", the first of its design. It was to be in service in 2012, so that a series could be launched from 2015 and enter service from 2020, as France's first 900-megawatt reactors reached 40 years.[1]
+Électricité de France (EDF), the French state-controlled electricity company, wanted to build a new kind of reactor at Flamanville, in Normandy.[2] The European Pressurized Reactor (EPR) there would be the "head of series", the first EPR in France.[2] It was to be in service in 2012, so that a series could be launched from 2015 and enter service from 2020, as France's first 900-megawatt reactors reached 40 years.[1]
 
 In December 2003 a consortium of Areva, also state-controlled,[2] and Siemens won a Finnish order for an EPR on turnkey terms, offering to build it in 48 months for 3 billion euros.[1] On 22 June 2004 EDF's board unanimously approved the launch of what became Flamanville 3. EDF's chairman told the board that the Finns should pour their first concrete early in 2005, "two years ahead of EDF", and that the gap between the Finnish reactor and EDF's own shouldn't be allowed to grow too wide.[2]
 
@@ -32,7 +32,7 @@ When the board committed in May 2006, with commissioning announced for June 2012
 
 A plan is the project's work written down in enough detail to agree to: all of the work, who owns each piece, how long each should take and on what basis, the order it happens in, and what it costs. The field calls it a project management plan. When it's agreed it becomes the baseline, the version progress is measured against, and from then on each change to it is asked for and approved. In a company of 40 the plan might be one workbook of a few dozen rows, drawn up in a couple of weeks. On this site it's one plan workbook, shared by the four parts below.
 
-GovS 002, the UK government's standard for project delivery, asks for plans that show milestones, activities, schedule, cost and resources, and the assumptions and risks behind them.[3] Planning may be "iterative and progressive", with more detail for the near future than for distant work, and plans should be updated, especially before decision points such as gates.[3] The standard runs planning and control through the whole life of a project and lets each project choose its own stages.[3] On this map Plan is the stretch of a project from its start to the gate called Plan baselined, and planning carries on through Run, Cutover and Handover.
+GovS 002, the UK government's standard for project delivery, asks for plans that show milestones, activities, schedule, cost and resources, and the assumptions and risks behind them.[3] Planning may be "iterative and progressive", with more detail for the near future than for distant work, and plans should be updated, especially before decision points such as gates.[3] The standard runs planning and control through the whole life of a project, and has each project fit its stages to the standard's reference life cycle, with fewer stages for simpler projects.[3] On this map Plan is the stretch of a project from its start to the gate called Plan baselined, and planning carries on through Run, Cutover and Handover.
 
 ## Who runs it
 

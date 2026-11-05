@@ -8,9 +8,9 @@ desc: Should we take this on, and ahead of what? How Australia's community sport
 draws_on: Portfolio map, Capacity, Roadmap and dependencies
 feeds_into: Portfolio map, Project charter
 template_name: Intake, in the portfolio workbook
-cover: /delivery/intake-and-scoring/intake-and-scoring-cover.png
+cover: /delivery/intake-and-scoring/intake-and-scoring-cover-2.png
 template_shot: /delivery/intake-and-scoring/frqz-portfolio-intake.png
-template_text: Intake is a tab in FRQZ's portfolio workbook, Starter and Full: start on it when requests begin to queue, and move to the Full when you need to see who asked and how long each request has waited. The brief for an assistant is [a text file](/delivery/intake-and-scoring/frqz-intake-agent-brief.txt) beside it.
+template_text: Intake is a tab in FRQZ's portfolio workbook, Starter and Full: start on it when requests begin to queue, and move to the Full when you need to see when each request is wanted and how long it has waited. The brief for an assistant is [a text file](/delivery/intake-and-scoring/frqz-intake-agent-brief.txt) beside it.
 templates: Starter | /delivery/portfolio-map/frqz-portfolio-starter.xlsx | /delivery/portfolio-map/frqz-portfolio-starter-example.xlsx | Seven tabs ;; Full | /delivery/portfolio-map/frqz-portfolio-full.xlsx | /delivery/portfolio-map/frqz-portfolio-full-example.xlsx | Nine tabs
 files: /delivery/intake-and-scoring/frqz-intake-agent-brief.txt
 ---
@@ -29,13 +29,13 @@ The Minister's Office was running an assessment of its own from the same spreads
 
 Two more rounds followed as money was added, until 684 grants had shared $100 million. In the second round 70 percent of the approved projects weren't on the list Sport Australia had planned to recommend, and in the third 73 percent hadn't been recommended by it.[1] By the scores alone, all of the money could have gone to applications that scored 74 or more.[1] One that scored 98, asking $44,909 to make the toilets at a skating venue accessible, was recommended in the first round and wasn't funded in any round.[1]
 
-The auditor found much that worked. The guidelines "were well structured and included clear assessment criteria with transparent weightings", no application assessed as ineligible was funded, and the scoring was largely in line with the guidelines.[1] The guidelines did give the Minister the decision. The finding was that the Minister's Office drew on "considerations other than those identified in the program guidelines, such as the location of projects", and that its assessment, not Sport Australia's, mostly informed the decisions.[1] Sport Australia said in reply that "timing and resourcing pressures" had played a part.[1]
+The auditor found the program's design deficient in a number of important areas, but some things worked. The guidelines "were well structured and included clear assessment criteria with transparent weightings", no application assessed as ineligible was funded, and the scoring was largely in line with the guidelines.[1] The guidelines did name the Minister as the one to approve, though the auditor found no record of the legal basis for that. The finding was that the Minister's Office drew on "considerations other than those identified in the program guidelines, such as the location of projects", and on some that went against them, and that its assessment, not Sport Australia's, mostly informed the decisions.[1] Sport Australia said in reply that "timing and resourcing pressures" had played a part.[1]
 
 The scores and the decisions ended up side by side, which is how the auditor could count, round by round, the approvals the scores hadn't put forward. The records didn't say how those had been chosen instead.[1]
 
 ## What intake is for
 
-Intake is how new work gets onto the portfolio. Every request goes in one list, is scored against criteria agreed before any of them is scored, then ranked and tested against the money and the people that are left. The director reads the rank and decides, and writes down why when the decision isn't the rank. The field calls this demand management or project intake, and the criteria are its prioritization criteria. In a company of 40 it might be six requests a quarter, scored in one sitting. Sport Australia had 2,056 in a six-week window.[1]
+Intake is how new work gets onto the portfolio. Every request goes in one list, is scored against criteria agreed before any of them is scored, then ranked and tested against the money and the people that are left. The director reads the rank and decides, and writes down why when the decision isn't the rank. You may also know it as demand management or project intake, and the criteria as prioritization criteria. In a company of 40 it might be six requests a quarter, scored in one sitting. Sport Australia had 2,056 in a six-week window.[1]
 
 Intake is easy to confuse with the register on the [portfolio map](/delivery/portfolio-map/). The register holds the work that's approved or running; intake holds the requests to add to it, and the answer each one got. The UK's Infrastructure and Projects Authority puts two questions about it in the assurance workbook its reviewers use on a portfolio: "Is there a robust process for project inception and entry to the portfolio?" and "What are the criteria for selecting and prioritising the portfolio components?"[2]
 
@@ -64,7 +64,7 @@ For each request:
 
 The tab works out a **Score** out of 100, a **Recommended rank** among the requests still waiting to start, and whether each one **Fits the money** and **Fits the people**, counted together with every request ranked above it. The rank is a recommendation; a person types the decision.
 
-Above the table is what's left for new work. **Left in the envelope** comes from the Portfolio tab (the Funding tab in the Full): the money not yet given to any program. For work inside a program, ask that program's owner. You type **Free person-days**, with the period it covers beside it. The Full workbook adds **Requested by**, **Wanted start**, **Register name** for a project whose name differs, and **Days open**.
+Above the table is what's left for new work. **Left in the envelope** comes from the Portfolio tab (the Funding tab in the Full): the money not yet given out as a budget, to a program or to a project that sits straight under the portfolio. For work inside a program, ask that program's owner. You type **Free person-days**, with the period it covers beside it. The Full workbook adds **Wanted start**, **Register name** for a project whose name differs, and **Days open**.
 
 ## Test
 
